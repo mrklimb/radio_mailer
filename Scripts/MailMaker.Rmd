@@ -1,0 +1,92 @@
+---
+# title: "Single Promotion"
+# author: "Toxic Bears"
+# date: "10/18/2020"
+output: html_document
+params:
+  song: "Big Stick"
+  station_name: "2xx"
+---
+
+
+```{r setup, include=FALSE}
+# This code block loads in the data sets and subsets the data using the parameters in the header above
+library(dplyr)
+knitr::opts_chunk$set(echo = TRUE)
+song <- read.csv(file = "C:/Users/Prime/Desktop/Toxic Bears Email Maker/data/Song_info.csv")
+stations <- read.csv(file = "C:/Users/Prime/Desktop/Toxic Bears Email Maker/data/Station_info.csv")
+song_subset <- song %>% 
+  filter(Track == params$song)
+station_subset <- stations %>% 
+  filter(Station == params$station_name)
+```
+
+```{r variable_define, include=FALSE }
+md_name <- as.vector(station_subset[1], mode = "character")
+track_name <- as.vector(song_subset[1], mode = "character")
+radio_station <- as.vector(station_subset[3], mode = "character")
+track_type <- as.vector(song_subset[2], mode = "character")
+track_desc <- as.vector(song_subset[4], mode = "character")
+program_type <- as.vector(song_subset[3], mode = "character")
+location <- as.vector(station_subset[4], mode = "character")
+download <- as.vector(song_subset[5], mode = "character")
+YT_stream <- as.vector(song_subset[6], mode = "character")
+smarturl <- as.vector(song_subset[7], mode = "character")
+engineer <- as.vector(song_subset[8], mode = "character")
+studio <- as.vector(song_subset[9], mode = "character")
+email <- as.vector(station_subset[6], mode = "character")
+```
+
+### Email: 
+`r email`
+<br>
+<br>
+
+### Subject: 
+New single released by Toxic Bears - `r track_name`
+<br>
+<br>
+
+### Body:
+
+Hi `r md_name`,
+
+I'm from the Brisbane based avant-garage experimental rock band, Toxic Bears. 
+We recently released a new single called `r track_name`, and would love to have it heard on `r radio_station`!   `r track_name` is an `r track_type` track about `r track_desc`.
+<br>
+<br>
+
+#### About the track
+
+This track would suit programming that focuses on `r program_type`, as well as those that feature new and/or `r location` music. `r track_name` was mixed and mastered by `r engineer` from `r studio`.
+
+You can download the track here:
+
+`r download`
+<br>
+<br>
+
+You can also stream the track on YouTube from here:
+
+`r YT_stream`
+<br>
+<br>
+
+Alternatively, you can stream via your service of choice here:
+
+`r smarturl`
+<br>
+<br>
+
+#### About the band
+
+Toxic Bears are an experimental rock band based in Brisbane, Australia. Our music ranges from melodic hardcore to funk, jazz and Latin-infused garage rock. We’ve recorded three albums, an EP, and recently released three singles. We record all instrumentation live in a single take and only overdub vocals and other embellishments.   For more information, please visit  https://toxicbears.com/ 
+
+It would be much appreciated if you could forward this track to the relevant producer/DJs at your radio station for their consideration and inclusion in their programming.
+
+Thank you for your consideration and please don't hesitate to contact me if you have any further questions about the track or our band.
+
+Best regards,
+
+Mark
+
