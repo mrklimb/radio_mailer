@@ -1,2 +1,2 @@
 # radio_mailer
-An automated email generator for promoting musoic
+An automated email generator for promoting music
