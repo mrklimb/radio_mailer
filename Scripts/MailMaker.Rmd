@@ -1,10 +1,10 @@
 ---
 # title: "Single Promotion"
 # author: "Toxic Bears"
-# date: "10/18/2020"
+# date: "12/08/2020"
 output: html_document
 params:
-  song: "Big Stick"
+  song: "Misspent Youth"
   station_name: "2xx"
 ---
 
@@ -13,8 +13,8 @@ params:
 # This code block loads in the data sets and subsets the data using the parameters in the header above
 library(dplyr)
 knitr::opts_chunk$set(echo = TRUE)
-song <- read.csv(file = "C:/Users/Prime/Desktop/Toxic Bears Email Maker/data/Song_info.csv")
-stations <- read.csv(file = "C:/Users/Prime/Desktop/Toxic Bears Email Maker/data/Station_info.csv")
+song <- read.csv(file = "C:/Users/Prime/Desktop/R Projects/radio_mailer/data/Song_info.csv")
+stations <- read.csv(file = "C:/Users/Prime/Desktop/R Projects/radio_mailer/data/Station_info.csv")
 song_subset <- song %>% 
   filter(Track == params$song)
 station_subset <- stations %>% 
@@ -52,7 +52,7 @@ New single released by Toxic Bears - `r track_name`
 Hi `r md_name`,
 
 I'm from the Brisbane based avant-garage experimental rock band, Toxic Bears. 
-We recently released a new single called `r track_name`, and would love to have it heard on `r radio_station`!   `r track_name` is an `r track_type` track about `r track_desc`.
+On 23 December we will release a new single called `r track_name`, and would love to have it heard on `r radio_station`!   `r track_name` is an `r track_type` track about `r track_desc`. 
 <br>
 <br>
 
@@ -66,13 +66,7 @@ You can download the track here:
 <br>
 <br>
 
-You can also stream the track on YouTube from here:
-
-`r YT_stream`
-<br>
-<br>
-
-Alternatively, you can stream via your service of choice here:
+Alternatively, you can stream via Bandcamp here:
 
 `r smarturl`
 <br>

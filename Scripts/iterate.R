@@ -18,9 +18,9 @@ library(tidyverse)
 # creates a vector of the radio stations in the table, then sets these names as the path for the output
 station_name <- stations$Station
 mails <- tibble(
-  output_file = stringr::str_c("C:/Users/Prime/Desktop/Toxic Bears Email Maker/output/", station_name, "-mailout.html"),
+  output_file = stringr::str_c("C:/Users/Prime/Desktop/R Projects/radio_mailer/output/", station_name, "-mailout.html"),
   params = map(station_name, ~list(station_name = .))
 )
 mails
 mails %>%
-   pwalk(rmarkdown::render, input = "C:/Users/Prime/Desktop/Toxic Bears Email Maker/scripts/MailMaker.Rmd")
+   pwalk(rmarkdown::render, input = "C:/Users/Prime/Desktop/R Projects/radio_mailer/scripts/MailMaker.Rmd")
