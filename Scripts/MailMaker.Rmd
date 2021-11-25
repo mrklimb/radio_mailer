@@ -4,7 +4,7 @@
 # date: "12/08/2020"
 output: html_document
 params:
-  song: "Cutting Onions"
+  song: "Glow"
   station_name: "2xx"
 ---
 
@@ -52,7 +52,7 @@ New single by Toxic Bears - `r track_name`
 Hi `r md_name`,
 
 I'm from the Brisbane based avant-garage experimental rock band, Toxic Bears. 
-On 4 June we will release a new single called `r track_name`, and would love to have it heard on `r radio_station`!   `r track_name` is an `r track_type` track about `r track_desc`. 
+On 3 December we will release a new single called `r track_name`, and would love to have it heard on `r radio_station`!   `r track_name` is an `r track_type` track about `r track_desc`. 
 <br>
 <br>
 
@@ -66,9 +66,9 @@ You can download the track here:
 <br>
 <br>
 
-Alternatively, you can stream via Bandcamp here:
+Alternatively, you can stream via YouTube here:
 
-`r smarturl`
+`r YT_stream`
 <br>
 <br>
 
